@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Playbook K1 - M29 - SCAMPER</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            padding: 20px;
+        }
+        .header {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px;
+            text-align: center;
+        }
+        .banner {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px;
+            cursor: pointer;
+            margin-bottom: 10px;
+        }
+        .banner .title {
+            font-size: 1.2em;
+            display: flex;
+            justify-content: space-between;
+        }
+        .banner .subtitle {
+            font-size: 1em;
+            margin-top: 5px;
+            border-top: 1px solid white;
+            padding-top: 5px;
+        }
+        .content {
+            display: none;
+            padding: 10px;
+            border: 1px solid #ddd;
+            margin-bottom: 10px;
+        }
+        .section {
+            margin-bottom: 15px;
+        }
+        .step-title {
+            font-weight: bold;
+            color: #333;
+            margin-bottom: 5px;
+            text-align: left;
+        }
+        .section-title {
+            font-weight: bold;
+            color: #333;
+            margin-bottom: 5px;
+            text-align: right;
+        }
+        .dialogue {
+            background-color: #f0f0f0;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            padding: 10px;
+            margin: 10px 0;
+            text-align: right;
+            font-style: italic;
+        }
+        .dropdown {
+            margin-bottom: 20px;
+        }
+        .dropdown select {
+            font-size: 1em;
+            padding: 5px;
+            margin-left: 10px;
+        }
+        .time-title {
+            font-size: 1.5em;
+            margin-bottom: 10px;
+        }
+        .activity { margin-bottom: 30px; }
+        table { width: 100%; border-collapse: collapse; }
+        td { padding: 8px; border: 1px solid #ddd; vertical-align: top; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Playbook K1 - M29 - SCAMPER</h1>
+
+        <div class="dropdown">
+            <label for="class-time">Tiempo efectivo de Clase:</label>
+            <select id="class-time" onchange="updateContent()">
+                <option value="50">50 minutos</option>
+                <option value="40">40 minutos</option>
+                <option value="30">30 minutos</option>
+            </select>
+        </div>
+
+        <h2 id="selected-time" class="time-title">Tiempo efectivo de clase: 50 minutos</h2>
+
+        <!-- Actividad 0 -->
+        <div id="activity-0" class="activity">
+            <div class="banner" onclick="toggleContent('revision_materiales')">
+                <div class="title">📚 Actividad 0: Revisión de Materiales ⏰ Tiempo: N/A</div>
+                <div class="subtitle">Reproduce la DIAPOSITIVA 1 para revisar la lista de materiales que tienes que tener listos para la misión.</div>
+            </div>
+            <div id="revision_materiales" class="content">
+                <table>
+                    <tr>
+                        <td><strong>PASO 1 (N/A):</strong> Reproduce la DIAPOSITIVA 1 para revisar la lista de materiales que tienes que tener listos para la misión.</td>
+                        <td><strong>DIÁLOGO SUGERIDO:</strong> N/A</td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+
+        <!-- Actividad 1 -->
+        <div id="activity-1" class="activity">
+            <div class="banner" onclick="toggleContent('bienvenida')">
+                <div class="title">🎉 Actividad 1: Bienvenida e Introducción ⏰ Tiempo: 1 minuto</div>
+                <div class="subtitle">Saluda a los niños e introduce la misión.</div>
+            </div>
+            <div id="bienvenida" class="content">
+                <table>
+                    <tr>
+                        <td><strong>PASO 1 (1 minuto):</strong> Reproduce la DIAPOSITIVA 2 "Code Squad" y saluda a los niños mientras muestras el equipo de Code Squad, luego introduce el tema del día y la necesidad de entrenar el cerebro para la misión.</td>
+                        <td><strong>DIÁLOGO SUGERIDO:</strong> ¡Hola, genios del CODE SQUAD! ¡Bienvenidos a una nueva misión llena de arte y tradición! Hoy, vamos a usar la 'E' de SCAMPER, que significa Eliminar. Vamos a conocer los Árboles de la Vida y a un artesano muy especial que los crea. ¿Listos para usar su imaginación al máximo? ¡Antes, a movernos con el baile de SCAMPER!</td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+
+        <!-- Actividad 2 -->
+        <div id="activity-2" class="activity">
+            <div class="banner" onclick="toggleContent('baile_scamper')">
+                <div class="title">💃 Actividad 2: Baile de SCAMPER ⏰ Tiempo: 2 minutos</div>
+                <div class="subtitle">Guía a los niños con estos pasos para aplicar SCAMPER al baile.</div>
+            </div>
+            <div id="baile_scamper" class="content">
+                <table>
+                    <tr>
+                        <td><strong>PASO 1 (2 minutos):</strong> Reproduce la DIAPOSITIVA 3 "Canción SCAMPER" y guía a los niños con estos pasos para aplicar SCAMPER al baile:
+                            <ul>
+                                <li><strong>Paso Inicial</strong> (Derecha, derecha, izquierda, izquierda): Comienza con un paso lateral básico, dos pasos a la derecha y dos a la izquierda.</li>
+                                <li><strong>Sustituir</strong> (Adelante, adelante, atrás, atrás): Cambias los pasos laterales por dos pasos adelante y dos atrás.</li>
+                                <li><strong>Combinar</strong> (Derecha adelante, izquierda atrás): Combinas los movimientos alternando un paso adelante con la derecha y uno atrás con la izquierda.</li>
+                                <li><strong>Adaptar</strong> (Pasos pequeños): Sigues con los pasos combinados, pero ahora los haces pequeños, casi como saltitos.</li>
+                                <li><strong>Proponer</strong> (Movimiento libre con las manos): Mantienes los pasos pequeños, pero ahora los niños pueden añadir movimientos libres con las manos, como quieran.</li>
+                                <li><strong>Eliminar</strong> (Solo pasos pequeños): Eliminas los movimientos de manos y vuelves a hacer solo los pasos pequeños hacia adelante y atrás.</li>
+                                <li><strong>Reorganizar</strong> (Izquierda adelante, derecha atrás): Inviertes la combinación, comenzando con izquierda adelante y derecha atrás.</li>
+                            </ul>
+                        </td>
+                        <td><strong>DIÁLOGO SUGERIDO:</strong> ¡A moverse, CODE SQUAD! Sigan mis pasos para que aprendamos a bailar al estilo SCAMPER. ¡No importa si se equivocan, lo importante es divertirnos y despertar nuestra creatividad! ¡Vamos!</td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+
+        <!-- Actividad 3 -->
+        <div id="activity-3" class="activity">
+            <div class="banner" onclick="toggleContent('planteamiento_problema')">
+                <div class="title">🛠️ Actividad 3: Planteamiento del Problema ⏰ Tiempo: 1.5 minutos</div>
+                <div class="subtitle">Introduce la historia de Don Miguel y sus Árboles de la Vida.</div>
+            </div>
+            <div id="planteamiento_problema" class="content">
+                <table>
+                    <tr>
+                        <td><strong>PASO 1 (1 minuto):</strong> Reproduce la DIAPOSITIVA 4 "Desafío de Innovación" e introduce el video de los Árboles de la Vida de Metepec, Estado de México.</td>
+                        <td><strong>DIÁLOGO SUGERIDO:</strong> ¡Genios del CODE SQUAD! Hoy tenemos una misión llena de color y significado. Vamos a ayudar a Don Miguel, un artesano que crea unos Árboles de la Vida increíbles en Metepec, Estado de México. ¡Conozcan su historia y su arte, y descubramos cómo podemos ayudarlo!</td>
+                    </tr>
+                    <tr>
+                        <td><strong>PASO 2 (0.5 minutos):</strong> Reproduce la DIAPOSITIVA 5 "Video Árboles de la Vida" y al final haz algunas preguntas para asegurarte de que todos entendieron el reto.</td>
+                        <td><strong>DIÁLOGO SUGERIDO:</strong> ¡Qué hermosos, ¿verdad?! Los Árboles de la Vida de Don Miguel son asombrosos. Ahora, para estar seguros de que estamos listos para innovar, respondamos algunas preguntas. ¿En qué estado de México crea Don Miguel sus obras de arte? (Esperar respuestas). ¡Exacto, Estado de México! ¿Y de qué material están hechos principalmente los Árboles de la Vida? (Esperar respuestas). ¡De barro! ¿Y qué vamos a hacer hoy con los Árboles de la Vida? (Esperar respuestas). ¡Vamos a Eliminar elementos para crear nuevos diseños! ¿Y qué letra de SCAMPER nos guiará? (Esperar respuestas). ¡La 'E' de Eliminar! ¡Manos a la obra!</td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+
+        <!-- Actividad 4 -->
+        <div id="activity-4" class="activity">
+            <div class="banner" onclick="toggleContent('introduccion_scamper')">
+                <div class="title">🧠 Actividad 4: Introducción a la metodología SCAMPER ⏰ Tiempo: 1 minuto</div>
+                <div class="subtitle">Explica cómo hacer preguntas de innovación con "Eliminar".</div>
+            </div>
+            <div id="introduccion_scamper" class="content">
+                <table>
+                    <tr>
+                        <td><strong>PASO 1 (1 minuto):</strong> Reproduce la DIAPOSITIVA 6 "E de Eliminar" y explica cómo hacer preguntas de innovación con "Eliminar".</td>
+                        <td><strong>DIÁLOGO SUGERIDO:</strong> ¡Genios, hoy aprenderemos una palabra mágica que nos ayudará a simplificar y crear diseños únicos: Eliminar! ¿Saben qué significa? ¡Significa quitar algo para ver qué pasa! A veces, menos es más. ¿Se imaginan un Árbol de la Vida con menos colores, o con menos figuras? ¡Vamos a aprender una fórmula secreta para hacer preguntas y descubrir nuevas posibilidades!</td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+
+        <!-- Actividad 5 -->
+        <div id="activity-5" class="activity">
+            <div class="banner" onclick="toggleContent('metodologia_qtf')">
+                <div class="title">❓ Actividad 5: Metodología QTF ⏰ Tiempo: Variable</div>
+                <div class="subtitle">Presenta el estímulo para hacer preguntas utilizando SCAMPER.</div>
+            </div>
+            <div id="metodologia_qtf" class="content">
+                <table>
+                    <tr>
+                        <td><strong>PASO 1 (0.5 minutos):</strong> Reproduce la DIAPOSITIVA 7 "Paso 1 Metodología QTF" y presenta el estímulo para hacer preguntas.</td>
+                        <td><strong>DIÁLOGO SUGERIDO:</strong> ¡Muy bien, CODE SQUAD! ¿Recuerdan que los Árboles de la Vida de Don Miguel tienen muchos colores y figuras? (Esperar respuestas). ¡Exacto! Ahora vamos a usar nuestra fórmula mágica de Eliminar para hacernos preguntas que nos ayuden a crear diseños minimalistas.</td>
+                    </tr>
+                    <tr>
+                        <td><strong>PASO 2 (1 minuto):</strong> Reproduce la DIAPOSITIVA 8 "Fórmula Preguntas" y explica cómo el CODE SQUAD puede hacerse preguntas para ayudar a Don Miguel.</td>
+                        <td><strong>DIÁLOGO SUGERIDO:</strong> ¡Aquí está la fórmula secreta de Eliminar, genios! Presten atención: "¿Qué podríamos Eliminar de [parte del Árbol de la Vida] para hacerlo más [característica deseada]?" Por ejemplo, podríamos preguntar: "¿Qué podríamos Eliminar de los colores del Árbol de la Vida para hacerlo más moderno?". ¡Ahora es su turno de crear preguntas asombrosas!</td>
+                    </tr>
+                    <tr>
+                        <td><strong>PASO 3 (3 minutos):</strong> Reproduce la DIAPOSITIVA 9 "Formulación de Preguntas" y guía a los niños en la creación de preguntas iniciales sobre qué eliminar. Si hay bloqueo, sugiere que piensen en diferentes elementos de los Árboles de la Vida (colores, figuras, ramas, base). Anota sus preguntas en el pizarrón.</td>
+                        <td><strong>DIÁLOGO SUGERIDO:</strong> ¡Es hora de usar la fórmula, CODE SQUAD! Vamos a pensar en qué podríamos Eliminar de los Árboles de la Vida de Don Miguel. ¿Qué tal si eliminamos algunos personajes? ¿O si quitamos algunos colores? ¿O si hacemos la base más pequeña? ¡Escribamos todas nuestras preguntas en el pizarrón para tener muchas ideas!</td>
+                    </tr>
+                    <tr>
+                        <td><strong>PASO 4 (1 minuto):</strong> Reproduce la DIAPOSITIVA 10 "Mejorar preguntas" explica la manera en la que podemos mejorar las preguntas que ya hicimos.</td>
+                        <td><strong>DIÁLOGO SUGERIDO:</strong> ¡Genios, sus preguntas son increíbles! Ahora, vamos a hacerlas aún más específicas y poderosas. ¿Recuerdan la diferencia entre una pregunta general y una específica? En lugar de preguntar "¿Qué podríamos Eliminar del Árbol de la Vida?", podríamos preguntar "¿Qué podríamos Eliminar de las figuras del Árbol de la Vida para que solo queden las flores?". ¡A darle un toque de precisión a nuestras preguntas!</td>
+                    </tr>
+                    <tr>
+                        <td><strong>PASO 5 (3 minutos):</strong> Reproduce la DIAPOSITIVA 11 "Ejemplo Pregunta Específica" da un ejemplo de pregunta específica y facilita el proceso para que los niños tomen las preguntas que ya hicieron y las vayan haciendo específicas. Ve agotando las preguntas una a una y anota las nuevas preguntas de los genios en el pizarrón.</td>
+                        <td><strong>DIÁLOGO SUGERIDO:</strong> ¡Es hora de afinar nuestras preguntas, CODE SQUAD! Tomemos una de sus preguntas: "¿Qué podríamos Eliminar de los colores del Árbol de la Vida?". ¿Cómo la harían más específica? Podríamos preguntar: "¿Qué colores podríamos Eliminar del Árbol de la Vida para que solo tenga tonos azules?". ¡Vamos a transformar cada pregunta en una obra maestra de creatividad!</td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+
+        <!-- Actividad 6 -->
+        <div id="activity-6" class="activity">
+            <div class="banner" onclick="toggleContent('prototipado_arboles')">
+                <div class="title">🖍️ Actividad 6: Prototipado en Papel de Árboles de la Vida ⏰ Tiempo: Variable</div>
+                <div class="subtitle">Aplica las preguntas formuladas en el diseño de los Árboles de la Vida.</div>
+            </div>
+            <div id="prototipado_arboles" class="content">
+                <table>
+                    <tr>
+                        <td><strong>PASO 1 (0.5 minutos):</strong> Reproduce la DIAPOSITIVA 12 "Innovando Árboles de la Vida" y explica que aplicaremos las preguntas para crear nuevos diseños.</td>
+                        <td><strong>DIÁLOGO SUGERIDO:</strong> ¡Llegó el momento de la verdad, CODE SQUAD! Con todas esas preguntas geniales que crearon, vamos a dibujar nuestros propios Árboles de la Vida simplificados. ¡Prepárense para crear diseños minimalistas y sorprendentes!</td>
+                    </tr>
+                    <tr>
+                        <td><strong>PASO 2 (1 minuto):</strong> Reproduce la DIAPOSITIVA 13 "Entregar Materiales" y distribuye los materiales. Asegúrate de que todos los niños tengan papel y colores.</td>
+                        <td><strong>DIÁLOGO SUGERIDO:</strong> ¡Aquí tienen sus herramientas de creación, artistas! Papel, colores, ¡todo lo que necesitan para transformar los Árboles de la Vida de Don Miguel!</td>
+                    </tr>
+                    <tr>
+                        <td><strong>PASO 3 (5-10 minutos):</strong> Reproduce la DIAPOSITIVA 14 "Diseñar Árbol de la Vida" y guía a los niños a dibujar sus Árboles de la Vida simplificados paso a paso, usando las preguntas que crearon.</td>
+                        <td><strong>DIÁLOGO SUGERIDO:</strong> ¡Manos a la obra, genios! Vamos a dibujar nuestros Árboles de la Vida minimalistas. ¿Qué van a Eliminar? ¿Colores, figuras, ramas? ¡Dibújenlo con cuidado y recuerden que a veces menos es más! ¡A crear obras de arte únicas!</td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+
+        <!-- Actividad 7 -->
+        <div id="activity-7" class="activity">
+            <div class="banner" onclick="toggleContent('presentacion_tecnologia')">
+                <div class="title">💡 Actividad 7: Presentación de Tecnología ⏰ Tiempo: Variable</div>
+                <div class="subtitle">Presenta la adición de tecnología al reto.</div>
+            </div>
+            <div id="presentacion_tecnologia" class="content">
+                <table>
+                    <tr>
+                        <td><strong>PASO 1 (2 minutos):</strong> Reproduce la DIAPOSITIVA 15 "Presentación de Tecnología" y explica la adición de la tecnología de circuitos de papel a los Árboles de la Vida.</td>
+                        <td><strong>DIÁLOGO SUGERIDO:</strong> ¡Atención, CODE SQUAD! Ahora, vamos a darle un toque mágico a nuestros Árboles de la Vida simplificados con una tecnología increíble: ¡los circuitos de papel!</td>
+                    </tr>
+                    <tr>
+                        <td><strong>PASO 2 (2 minutos):</strong> Reproduce la DIAPOSITIVA 16 "Video de Circuitos de Papel" y al final facilita preguntas para comprobar que entendieron bien la tecnología.</td>
+                        <td><strong>DIÁLOGO SUGERIDO:</strong> ¡Asombroso, verdad! ¿Vieron cómo funcionan los circuitos de papel? Podemos crear caminos de luz usando cinta de cobre y foquitos LED. ¿Dónde podríamos usar esta tecnología en nuestros Árboles de la Vida? (Esperar respuestas). ¡Para iluminar las flores, las hojas o incluso la base! ¡A brillar con creatividad!</td>
+                    </tr>
+                    <tr>
+                        <td><strong>PASO 3 (1 minuto):</strong> Reproduce la DIAPOSITIVA 17 "Árboles con Circuitos" y muestra ejemplos de Árboles de la Vida que podrían usar circuitos de papel.</td>
+                        <td><strong>DIÁLOGO SUGERIDO:</strong> ¡Miren estos ejemplos de Árboles de la Vida con circuitos de papel! ¿Ven cómo las luces hacen que los diseños cobren vida? ¡Podemos hacer lo mismo con las creaciones de Don Miguel!</td>
+                    </tr>
+                    <tr>
+                        <td><strong>PASO 4 (5-8 minutos):</strong> Reproduce la DIAPOSITIVA 18 "Integración de Tecnología" y guía a los niños para pensar cómo incorporar la tecnología en sus propios diseños.</td>
+                        <td><strong>DIÁLOGO SUGERIDO:</strong> ¡Ahora, genios, piensen en cómo usarían los circuitos de papel en sus Árboles de la Vida! ¿Qué partes iluminarían? ¿Crearían patrones de luz? ¡Dejen volar su imaginación y hagan que sus Árboles de la Vida brillen con luz propia!</td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+
+        <!-- Actividad 8 -->
+        <div id="activity-8" class="activity">
+            <div class="banner" onclick="toggleContent('presentacion_arboles')">
+                <div class="title">🎨 Actividad 8: Presentación de Árboles de la Vida ⏰ Tiempo: 3 minutos</div>
+                <div class="subtitle">Organiza la presentación de los Árboles de la Vida en grupos de 3.</div>
+            </div>
+            <div id="presentacion_arboles" class="content">
+                <table>
+                    <tr>
+                        <td><strong>PASO 1 (3 minutos):</strong> Reproduce la DIAPOSITIVA 19 "Presentación Árboles" y organiza a los niños en grupos de 3 para que presenten sus Árboles de la Vida al equipo.</td>
+                        <td><strong>DIÁLOGO SUGERIDO:</strong> ¡Llegó el gran momento, CODE SQUAD! Vamos a formar grupos de tres y cada uno mostrará su Árbol de la Vida simplificado. Expliquen qué eliminaron, cómo usaron los circuitos de papel y por qué sus diseños son únicos. ¡A compartir nuestras creaciones con el mundo!</td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+
+        <!-- Actividad 9 -->
+        <div id="activity-9" class="activity">
+            <div class="banner" onclick="toggleContent('conclusion_historia')">
+                <div class="title">🏁 Actividad 9: Conclusión de la Historia y Reflexión ⏰ Tiempo: 1 minuto</div>
+                <div class="subtitle">Felicita al CODE SQUAD por su trabajo.</div>
+            </div>
+            <div id="conclusion_historia" class="content">
+                <table>
+                    <tr>
+                        <td><strong>PASO 1 (1 minuto):</strong> Reproduce la DIAPOSITIVA 20 "Conclusión y Cierre" y felicita al CODE SQUAD por su trabajo.</td>
+                        <td><strong>DIÁLOGO SUGERIDO:</strong> ¡Impresionante trabajo, CODE SQUAD! Don Miguel está maravillado con sus diseños minimalistas y creativos para los Árboles de la Vida. Gracias a ustedes, estas obras de arte brillarán con una nueva luz y seguirán contando historias por generaciones. ¡Sigan así, genios, su creatividad no tiene límites! ¡Nos vemos en la próxima misión!</td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+
+    </div>
+
+    <script>
+        function toggleContent(id) {
+            var content = document.getElementById(id);
+            if (content.style.display === "block") {
+                content.style.display = "none";
+            } else {
+                content.style.display = "block";
+            }
+        }
+
+        function updateContent() {
+            var time = document.getElementById("class-time").value;
+            document.getElementById("selected-time").innerText = "Tiempo efectivo de clase: " + time + " minutos";
+
+            // Filtrar pasos con tiempo 0 según el tiempo seleccionado
+            var activities = document.querySelectorAll('.activity');
+            activities.forEach(function(activity) {
+                var steps = activity.querySelectorAll('tr');
+                steps.forEach(function(step) {
+                    var stepTime = parseInt(step.getAttribute('data-time-' + time), 10);
+                    if (stepTime === 0) {
+                        step.style.display = 'none';
+                    } else {
+                        step.style.display = 'table-row';
+                    }
+                });
+            });
+        }
+
+        // Inicializar el contenido según las selecciones por defecto
+        updateContent();
+    </script>
+</body>
+</html>
